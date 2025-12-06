@@ -2,33 +2,48 @@
 <html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>تواصل معنا | نماء</title>
+    <title>تواصل | نماء</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <canvas id="canvas-bg"></canvas>
-    <div class="preloader"><div class="loader-logo"><i class="fas fa-leaf"></i> نماء</div><div class="spinner"></div></div>
+    <nav class="navbar desktop-only">
+        <div class="nav-content">
+            <a href="index.html" class="logo"><i class="fas fa-leaf"></i> نماء</a>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="products.html">المتجر</a></li>
+                <li><a href="contact.html" class="active">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="container" style="padding-top: 150px; padding-bottom: 80px;">
-        <h1 class="section-title">دعنا <span>نتحدث</span></h1>
+    <div class="container" style="padding-top: 150px;">
+        <h1 class="section-title">تواصل <span>معنا</span></h1>
         <div class="contact-wrapper">
             <div class="contact-info">
-                <h2 style="font-size:1.8rem; margin-bottom:20px; color:white;">معلومات الاتصال</h2>
-                <p style="color:var(--text-muted); margin-bottom:40px;">فريقنا جاهز للرد على جميع استفساراتكم.</p>
-                <div style="margin-bottom:30px;"><div style="color:var(--primary); font-size:1.2rem; margin-bottom:5px;"><i class="fas fa-phone"></i> الهاتف</div><div style="font-size:1.1rem; color:white;">01000000000</div></div>
-                <div style="margin-bottom:30px;"><div style="color:var(--primary); font-size:1.2rem; margin-bottom:5px;"><i class="fas fa-envelope"></i> البريد</div><div style="font-size:1.1rem; color:white;">sales@namaa.com</div></div>
+                <h2 style="color:white; margin-bottom:20px;">بيانات الاتصال</h2>
+                <p style="color:var(--text-muted); margin-bottom:30px;">فريقنا جاهز للرد على استفساراتك.</p>
+                <div style="margin-bottom:20px; color:var(--text-muted);"><i class="fas fa-phone" style="color:var(--primary); margin-left:10px;"></i> 01000000000</div>
+                <div style="margin-bottom:20px; color:var(--text-muted);"><i class="fas fa-envelope" style="color:var(--primary); margin-left:10px;"></i> info@namaa.com</div>
             </div>
             <div class="contact-form">
-                <h2 style="font-size:1.8rem; margin-bottom:30px; color:white;">أرسل رسالة</h2>
                 <form>
-                    <input type="text" class="form-input" placeholder="الاسم بالكامل">
-                    <input type="tel" class="form-input" placeholder="رقم الهاتف">
-                    <textarea rows="5" class="form-input" placeholder="اكتب رسالتك هنا..."></textarea>
-                    <button class="btn-glow" style="width:100%; justify-content:center;">إرسال الآن</button>
+                    <input type="text" class="form-input" placeholder="الاسم">
+                    <input type="tel" class="form-input" placeholder="الهاتف">
+                    <textarea class="form-input" rows="5" placeholder="الرسالة"></textarea>
+                    <button class="btn-glow" style="width:100%;">إرسال</button>
                 </form>
             </div>
         </div>
+    </div>
+
+    <div class="mobile-nav">
+        <a href="index.html" class="m-item"><i class="fas fa-home"></i></a>
+        <a href="products.html" class="m-item"><i class="fas fa-box"></i></a>
+        <div class="m-center"><a href="tel:01000000000" style="color:black;"><i class="fas fa-phone"></i></a></div>
+        <a href="contact.html" class="m-item active"><i class="fas fa-envelope"></i></a>
     </div>
     <script src="script.js"></script>
 </body>
