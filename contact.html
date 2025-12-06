@@ -2,85 +2,33 @@
 <html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تواصل معنا | نماء</title>
+    <title>تواصل | نماء</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
-
     <canvas id="canvas-bg"></canvas>
+    <div class="preloader"><div class="spinner"></div></div>
 
-    <div class="preloader">
-        <div class="loader-logo"><i class="fas fa-leaf"></i> نماء</div>
-        <div class="spinner"></div>
-    </div>
-
-    <div class="container" style="padding-top: 160px; padding-bottom: 100px;">
-        
-        <div class="section-title" data-aos="fade-up">دعنا <span>نتحدث</span></div>
-
-        <div class="contact-wrapper" data-aos="fade-up" data-aos-delay="100">
-            
+    <div class="container" style="padding-top: 160px; padding-bottom: 80px;">
+        <h1 class="section-title">دعنا <span>نتحدث</span></h1>
+        <div class="contact-wrapper">
             <div class="contact-info">
-                <h3 style="color:white; font-size:1.8rem; margin-bottom:20px; font-weight:800;">بيانات التواصل</h3>
-                <p style="color:var(--text-muted); margin-bottom:40px; line-height:1.8;">
-                    فريق خدمة العملاء لدينا جاهز للرد على جميع استفساراتكم التقنية والتجارية طوال أيام الأسبوع.
-                </p>
-                
-                <div style="margin-bottom:30px; display:flex; align-items:center; gap:15px;">
-                    <div style="width:50px; height:50px; background:rgba(16,185,129,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--primary); font-size:1.2rem;">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <div>
-                        <span style="display:block; color:var(--text-muted); font-size:0.9rem;">الهاتف</span>
-                        <span style="color:white; font-size:1.1rem; font-weight:bold;" dir="ltr">010 0000 0000</span>
-                    </div>
-                </div>
-
-                <div style="margin-bottom:30px; display:flex; align-items:center; gap:15px;">
-                    <div style="width:50px; height:50px; background:rgba(16,185,129,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--primary); font-size:1.2rem;">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div>
-                        <span style="display:block; color:var(--text-muted); font-size:0.9rem;">البريد الإلكتروني</span>
-                        <span style="color:white; font-size:1.1rem; font-weight:bold;">sales@namaa.com</span>
-                    </div>
-                </div>
-
-                <div style="display:flex; align-items:center; gap:15px;">
-                    <div style="width:50px; height:50px; background:rgba(16,185,129,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--primary); font-size:1.2rem;">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div>
-                        <span style="display:block; color:var(--text-muted); font-size:0.9rem;">المقر الرئيسي</span>
-                        <span style="color:white; font-size:1.1rem; font-weight:bold;">المنطقة الصناعية، القاهرة</span>
-                    </div>
-                </div>
+                <h2 style="color:white; margin-bottom:20px;">بيانات الاتصال</h2>
+                <p style="color:var(--text-muted); margin-bottom:40px;">فريقنا جاهز للرد على استفساراتك.</p>
+                <div style="margin-bottom:20px; color:var(--text-muted);"><i class="fas fa-phone" style="color:var(--primary); margin-left:10px;"></i> 01000000000</div>
+                <div style="margin-bottom:20px; color:var(--text-muted);"><i class="fas fa-envelope" style="color:var(--primary); margin-left:10px;"></i> info@namaa.com</div>
             </div>
-
             <div class="contact-form">
-                <h3 style="color:white; font-size:1.8rem; margin-bottom:30px; font-weight:800;">أرسل رسالة</h3>
                 <form>
-                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
-                        <input type="text" class="form-input" placeholder="الاسم الأول">
-                        <input type="text" class="form-input" placeholder="اسم العائلة">
-                    </div>
-                    <input type="tel" class="form-input" placeholder="رقم الهاتف">
-                    <input type="email" class="form-input" placeholder="البريد الإلكتروني">
-                    <textarea class="form-input" rows="5" placeholder="تفاصيل استفسارك..."></textarea>
-                    
-                    <button type="button" class="btn-glow" style="width:100%; justify-content:center;">إرسال الآن <i class="fas fa-paper-plane"></i></button>
+                    <input type="text" class="form-input" placeholder="الاسم">
+                    <input type="tel" class="form-input" placeholder="الهاتف">
+                    <textarea class="form-input" rows="5" placeholder="الرسالة"></textarea>
+                    <button class="btn-glow" style="width:100%;">إرسال</button>
                 </form>
             </div>
-
         </div>
     </div>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
