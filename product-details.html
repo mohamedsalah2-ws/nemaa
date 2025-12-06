@@ -2,38 +2,45 @@
 <html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>تفاصيل المنتج | نماء</title>
+    <title>التفاصيل | نماء</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <canvas id="canvas-bg"></canvas>
-    <div class="preloader"><div class="loader-logo"><i class="fas fa-leaf"></i> نماء</div><div class="spinner"></div></div>
+    <nav class="navbar desktop-only">
+        <div class="nav-content">
+            <a href="index.html" class="logo"><i class="fas fa-leaf"></i> نماء</a>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="products.html" class="active">المتجر</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="container" style="padding-top: 150px; padding-bottom: 80px;">
-        <a href="products.html" style="color:var(--text-muted); display:inline-flex; align-items:center; gap:10px; margin-bottom:30px;"><i class="fas fa-arrow-right"></i> عودة للمتجر</a>
-
+    <div class="container" style="padding-top: 150px;">
+        <a href="products.html" style="color:var(--text-muted); display:flex; gap:10px; margin-bottom:30px;"><i class="fas fa-arrow-right"></i> عودة</a>
         <div class="details-container">
-            <div class="d-img-box">
-                <img id="p-image" src="" style="width:100%; height:450px; object-fit:cover;">
-            </div>
-            <div class="d-content">
-                <span id="p-cat" style="color:var(--primary); font-weight:bold; letter-spacing:1px; background:rgba(16,185,129,0.1); padding:5px 15px; border-radius:20px;">...</span>
-                <h1 id="p-name" style="font-size:2.5rem; margin:20px 0 10px; color:white;">...</h1>
-                <span style="font-size:1.2rem; color:var(--text-muted); display:block; margin-bottom:30px;">متوفر بأحجام: 1 لتر - 5 لتر</span>
-                
+            <div class="d-img-box"><img id="p-image" src="" style="width:100%; height:400px; object-fit:cover;"></div>
+            <div class="p-details">
+                <span id="p-cat" class="p-badge" style="position:relative; top:0; right:0; display:inline-block;"></span>
+                <h1 id="p-name" style="font-size:2.5rem; margin:15px 0;"></h1>
                 <div class="tabs">
                     <div class="tab active" id="tab-desc">الوصف</div>
                     <div class="tab" id="tab-usage">الاستخدام</div>
                 </div>
-                <div id="tab-content" style="color:var(--text-muted); min-height:100px; white-space: pre-line; line-height:1.8;">...</div>
-
-                <div style="margin-top:40px; display:flex; gap:15px;">
-                    <a href="contact.html" class="btn-glow" style="text-decoration:none;">اطلب الآن</a>
-                    <a href="https://wa.me/201000000000" class="btn-outline" style="text-decoration:none;"><i class="fab fa-whatsapp"></i> واتساب</a>
-                </div>
+                <div id="tab-content" style="color:var(--text-muted);"></div>
+                <a href="contact.html" class="btn-glow" style="margin-top:30px;">اطلب الآن</a>
             </div>
         </div>
+    </div>
+
+    <div class="mobile-nav">
+        <a href="index.html" class="m-item"><i class="fas fa-home"></i></a>
+        <a href="products.html" class="m-item active"><i class="fas fa-box"></i></a>
+        <div class="m-center"><a href="tel:01000000000" style="color:black;"><i class="fas fa-phone"></i></a></div>
+        <a href="contact.html" class="m-item"><i class="fas fa-envelope"></i></a>
     </div>
     <script src="script.js"></script>
 </body>
