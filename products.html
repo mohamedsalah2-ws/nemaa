@@ -8,48 +8,21 @@
 </head>
 <body>
     <canvas id="canvas-bg"></canvas>
+    <div class="preloader"><div class="loader-logo"><i class="fas fa-leaf"></i> نماء</div><div class="spinner"></div></div>
 
-    <nav class="navbar desktop-only">
-        <div class="nav-content">
-            <a href="index.html" class="logo"><i class="fas fa-leaf"></i> نماء</a>
-            <ul class="nav-links">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="products.html" class="active">المتجر</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container" style="padding-top: 150px; padding-bottom: 50px;">
+    <div class="container" style="padding-top: 150px; padding-bottom: 80px;">
         <h1 class="section-title">جميع <span>المنتجات</span></h1>
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
-            <div class="product-card">
-                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?w=800" class="p-img"></div>
-                <div class="p-badge">منشطات نمو</div>
-                <div class="p-details">
-                    <h3 style="color:white;">سوبر نيتروجين</h3>
-                    <p style="color:var(--text-muted); font-size:0.9rem;">دفعة قوية للنمو.</p>
-                    <button onclick="window.location.href='product-details.html?id=1'" class="p-btn">التفاصيل</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800" class="p-img"></div>
-                <div class="p-badge">جذور</div>
-                <div class="p-details">
-                    <h3 style="color:white;">فوسفو روتس</h3>
-                    <p style="color:var(--text-muted); font-size:0.9rem;">تأسيس جذري.</p>
-                    <button onclick="window.location.href='product-details.html?id=2'" class="p-btn">التفاصيل</button>
-                </div>
-            </div>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="growth">نمو خضري</button>
+            <button class="filter-btn" data-filter="roots">جذور</button>
+            <button class="filter-btn" data-filter="fruit">إثمار</button>
+            <button class="filter-btn" data-filter="elements">عناصر</button>
         </div>
-    </div>
 
-    <div class="mobile-nav">
-        <a href="index.html" class="m-item"><i class="fas fa-home"></i></a>
-        <a href="products.html" class="m-item active"><i class="fas fa-box"></i></a>
-        <div class="m-center"><a href="tel:01000000000" style="color:black;"><i class="fas fa-phone"></i></a></div>
-        <a href="#" class="m-item"><i class="fab fa-whatsapp"></i></a>
-        <a href="contact.html" class="m-item"><i class="fas fa-envelope"></i></a>
+        <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
+            </div>
     </div>
 
     <script src="script.js"></script>
