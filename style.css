@@ -1,0 +1,159 @@
+/* --- إعدادات عامة --- */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+
+:root {
+    --primary: #10b981;       /* أخضر حيوي */
+    --primary-dark: #065f46;  /* أخضر غامق */
+    --gold: #f59e0b;          /* ذهبي */
+    --dark: #1f2937;          /* نص غامق */
+    --light: #f9fafb;         /* خلفية فاتحة */
+    --white: #ffffff;
+    --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
+
+body {
+    direction: rtl;
+    background-color: var(--light);
+    color: var(--dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* --- Navbar (القائمة العلوية) --- */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.nav-content {
+    display: flex; justify-content: space-between; align-items: center; height: 80px;
+}
+
+.logo {
+    font-size: 1.8rem; font-weight: 900; color: var(--primary-dark);
+    display: flex; align-items: center; gap: 10px;
+}
+
+.nav-links { display: flex; gap: 30px; align-items: center; }
+.nav-links a { font-weight: 700; color: var(--dark); position: relative; }
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+.nav-links a::after {
+    content: ''; position: absolute; width: 0; height: 2px;
+    bottom: -5px; right: 0; background: var(--primary); transition: 0.3s;
+}
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+.btn-main {
+    background: var(--primary-dark); color: var(--white) !important;
+    padding: 10px 25px; border-radius: 50px; font-weight: bold;
+    box-shadow: 0 5px 15px rgba(6, 95, 70, 0.3);
+}
+.btn-main:hover { transform: translateY(-3px); background: var(--primary); }
+.btn-main::after { display: none; } 
+
+.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+/* --- Hero Section (الواجهة) --- */
+.hero {
+    height: 90vh;
+    background: linear-gradient(135deg, rgba(6, 78, 59, 0.9), rgba(16, 185, 129, 0.7)),
+                url('https://images.unsplash.com/photo-1625246333195-58f214f76328?auto=format&fit=crop&w=1920');
+    background-size: cover; background-position: center; background-attachment: fixed;
+    display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+.hero h1 span { color: var(--gold); }
+.hero p { font-size: 1.2rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; opacity: 0.9; }
+
+.btn-hero {
+    background: var(--gold); color: var(--dark); padding: 15px 40px;
+    border-radius: 50px; font-weight: 800; font-size: 1.1rem;
+    box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3); display: inline-block;
+}
+.btn-hero:hover { transform: scale(1.05); background: #fbbf24; }
+
+/* --- الأقسام العامة (Features & Products) --- */
+.section { padding: 80px 0; }
+.section-title {
+    text-align: center; font-size: 2.5rem; color: var(--primary-dark);
+    margin-bottom: 60px; position: relative;
+}
+.section-title::before {
+    content: ''; position: absolute; width: 60px; height: 4px;
+    background: var(--gold); bottom: -15px; left: 50%; transform: translateX(-50%);
+}
+
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+.card {
+    background: white; padding: 30px; border-radius: 20px;
+    box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.03);
+    text-align: center; transition: 0.4s; overflow: hidden;
+}
+.card:hover { transform: translateY(-10px); border-bottom: 5px solid var(--primary); }
+
+.icon-box {
+    width: 70px; height: 70px; background: #ecfdf5; color: var(--primary);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; margin: 0 auto 20px; transition: 0.5s;
+}
+.card:hover .icon-box { background: var(--primary); color: white; transform: rotateY(360deg); }
+
+.product-img {
+    width: 100%; height: 220px; object-fit: cover; border-radius: 15px; margin-bottom: 20px;
+}
+
+/* --- صفحة التفاصيل (Product Details) --- */
+.product-detail-wrapper {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
+    background: white; padding: 40px; border-radius: 20px; box-shadow: var(--shadow);
+}
+.detail-image-box img { width: 100%; height: 400px; object-fit: cover; border-radius: 15px; }
+.category-tag {
+    background: #ecfdf5; color: var(--primary); padding: 5px 15px;
+    border-radius: 20px; font-weight: bold; font-size: 0.9rem; display: inline-block; margin-bottom: 20px;
+}
+.usage-text ul { list-style: disc; padding-right: 20px; color: #555; }
+.usage-text li { margin-bottom: 10px; }
+
+/* --- Stats Section (الأرقام) --- */
+.stats-section { background: var(--primary-dark); color: white; padding: 80px 0; text-align: center; }
+.stat-item h3 { font-size: 3rem; color: var(--gold); margin-bottom: 5px; }
+
+/* --- Footer --- */
+footer { background: #111827; color: #9ca3af; padding: 50px 0 20px; text-align: center; margin-top: auto; }
+
+/* --- Animation Classes --- */
+.reveal { opacity: 0; transform: translateY(50px); transition: all 1s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    .nav-links {
+        position: fixed; top: 80px; right: -100%; width: 80%; height: 100vh;
+        background: white; flex-direction: column; padding: 50px; transition: 0.4s;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+    .nav-links.active { right: 0; }
+    .hero { height: auto; padding: 120px 0; clip-path: none; }
+    .hero h1 { font-size: 2.5rem; }
+    .product-detail-wrapper { grid-template-columns: 1fr; }
+    .detail-image-box img { height: 250px; }
+}

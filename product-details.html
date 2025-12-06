@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المنتج | نماء</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo"><i class="fas fa-leaf text-green-600"></i> نماء</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="products.html" class="active">منتجاتنا</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <div class="section">
+        <div class="container">
+            <a href="products.html" style="display:inline-block; margin-bottom:20px; font-weight:bold;"><i class="fas fa-arrow-right"></i> عودة للمنتجات</a>
+            <div class="product-detail-wrapper reveal">
+                <div class="detail-image-box">
+                    <img id="p-image" src="" alt="صورة المنتج">
+                </div>
+                <div class="detail-info-box">
+                    <h1 id="p-name" style="font-size:2.5rem; margin-bottom:10px;">...</h1>
+                    <span id="p-category" class="category-tag">...</span>
+                    <p id="p-desc" style="margin-bottom:20px; color:#555;">...</p>
+                    <div class="usage-text">
+                        <h3 style="font-size:1.2rem; margin-bottom:10px;">طريقة الاستخدام:</h3>
+                        <ul id="p-usage"></ul>
+                    </div>
+                    <a href="contact.html" class="btn-main" style="margin-top:20px; display:inline-block;">اطلب المنتج الآن</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container"><p>© 2025 نماء للأسمدة الزراعية.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
