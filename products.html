@@ -8,19 +8,11 @@
 </head>
 <body>
     <canvas id="canvas-bg"></canvas>
-    <nav class="navbar desktop-only">
-        <div class="nav-content">
-            <a href="index.html" class="logo"><i class="fas fa-leaf"></i> نماء</a>
-            <ul class="nav-links">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="products.html" class="active">المتجر</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="preloader"><div class="spinner"></div></div>
 
-    <div class="container" style="padding-top: 150px; padding-bottom: 80px;">
+    <div class="container" style="padding-top: 160px; padding-bottom: 80px;">
         <h1 class="section-title">جميع <span>المنتجات</span></h1>
+        
         <div class="filter-container">
             <button class="filter-btn active" data-filter="all">الكل</button>
             <button class="filter-btn" data-filter="growth">نمو</button>
@@ -28,15 +20,11 @@
             <button class="filter-btn" data-filter="fruit">إثمار</button>
             <button class="filter-btn" data-filter="elements">عناصر</button>
         </div>
-        <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;"></div>
+
+        <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
+            </div>
     </div>
 
-    <div class="mobile-nav">
-        <a href="index.html" class="m-item"><i class="fas fa-home"></i></a>
-        <a href="products.html" class="m-item active"><i class="fas fa-box"></i></a>
-        <div class="m-center"><a href="tel:01000000000" style="color:black;"><i class="fas fa-phone"></i></a></div>
-        <a href="contact.html" class="m-item"><i class="fas fa-envelope"></i></a>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
