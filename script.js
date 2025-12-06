@@ -49,10 +49,66 @@ const initParticles = () => {
     window.addEventListener('resize', () => setTimeout(init, 100)); init(); animate();
 };
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // حقن النافبار والفوتر تلقائياً
+    const navbarHTML = `
+    <nav class="navbar desktop-only">
+        <div class="nav-content">
+            <a href="index.html" class="logo"><i class="fas fa-leaf"></i> نماء</a>
+            <ul class="nav-links">
+                <li><a href="index.html" data-page="index">الرئيسية</a></li>
+                <li><a href="products.html" data-page="products">المتجر</a></li>
+                <li><a href="contact.html" data-page="contact">اتصل بنا</a></li>
+            </ul>
+            <a href="products.html" class="btn-glow">تصفح المنتجات</a>
+        </div>
+    </nav>
+    <div class="mobile-nav">
+        <a href="index.html" class="m-item" data-page="index"><i class="fas fa-home"></i></a>
+        <a href="products.html" class="m-item" data-page="products"><i class="fas fa-box"></i></a>
+        <div class="m-center"><a href="tel:01000000000" style="color:black;"><i class="fas fa-phone"></i></a></div>
+        <a href="https://wa.me/201000000000" class="m-item"><i class="fab fa-whatsapp"></i></a>
+        <a href="contact.html" class="m-item" data-page="contact"><i class="fas fa-envelope"></i></a>
+    </div>`;
+
+    const footerHTML = `
+    <footer class="main-footer">
+        <div class="footer-line"></div>
+        <div class="container">
+            <div class="footer-cta-section">
+                <div class="cta-content"><h2>جاهز لزيادة إنتاجك؟</h2><p>انضم لآلاف المزارعين الناجحين.</p></div>
+                <a href="contact.html" class="btn-glow-white">تواصل مع خبير</a>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <a href="#" class="footer-logo" style="color:white; font-size:1.8rem; font-weight:800; display:flex; align-items:center; gap:10px; margin-bottom:15px;"><i class="fas fa-leaf" style="color:#10b981;"></i> نماء</a>
+                    <p class="brand-text">حلول زراعية ذكية لمستقبل مستدام.</p>
+                    <div class="social-row"><a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a></div>
+                </div>
+                <div class="footer-col">
+                    <h3 class="col-title">روابط</h3>
+                    <ul class="footer-links"><li><a href="index.html">الرئيسية</a></li><li><a href="products.html">المتجر</a></li><li><a href="contact.html">تواصل</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="col-title">اتصل</h3>
+                    <ul class="contact-list"><li><i class="fas fa-phone-alt"></i> 01000000000</li><li><i class="fas fa-envelope"></i> info@namaa.com</li></ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>© 2025 نماء للأسمدة.</p></div>
+        </div>
+    </footer>`;
+
+    document.body.insertAdjacentHTML("afterbegin", navbarHTML);
+    document.body.insertAdjacentHTML("beforeend", footerHTML);
+
+    // تفعيل الرابط النشط
+    const currentPage = window.location.pathname.split("/").pop().replace(".html", "") || "index";
+    document.querySelectorAll(`a[data-page="${currentPage}"], .m-item[data-page="${currentPage}"]`).forEach(el => el.classList.add("active"));
+
     initParticles();
 
-    // Preloader
+    // إخفاء Preloader
     const preloader = document.querySelector('.preloader');
     if(preloader) setTimeout(() => { preloader.style.opacity = '0'; setTimeout(() => preloader.style.visibility = 'hidden', 500); }, 1000);
 
@@ -60,47 +116,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     if(navbar) window.addEventListener('scroll', () => { window.scrollY > 30 ? navbar.classList.add('scrolled') : navbar.classList.remove('scrolled'); });
 
-    // Initialize AOS
+    // AOS
     if (typeof AOS !== 'undefined') AOS.init({ offset: 100, duration: 800, once: true });
 
-    // 1. Home Slider Population
+    // Slider Logic (Home)
     const swiperWrapper = document.querySelector('.swiper-wrapper');
     if (swiperWrapper) {
         productsDB.forEach(product => {
             const slide = document.createElement('div');
             slide.classList.add('swiper-slide');
-            slide.innerHTML = `
-                <div class="product-card">
-                    <div class="p-img-box"><img src="${product.img}" class="p-img"></div>
-                    <div class="p-badge">${product.cat}</div>
-                    <div class="p-details">
-                        <h3 style="color:white; margin-bottom:10px;">${product.name}</h3>
-                        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:15px;">${product.desc}</p>
-                        <button onclick="window.location.href='product-details.html?id=${product.id}'" class="p-btn">التفاصيل</button>
-                    </div>
-                </div>`;
+            slide.innerHTML = createProductCard(product);
             swiperWrapper.appendChild(slide);
         });
         if (typeof Swiper !== 'undefined') new Swiper(".mySwiper", { slidesPerView: 1, spaceBetween: 25, loop: true, autoplay: { delay: 3000 }, pagination: { clickable: true }, breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } } });
     }
 
-    // 2. Store Filter Logic
+    // Filter Logic (Store)
     const filterBtns = document.querySelectorAll('.filter-btn');
     const productGrid = document.querySelector('.products-grid');
     if (productGrid) {
         productsDB.forEach(product => {
-            productGrid.innerHTML += `
-                <div class="product-card" data-category="${product.catCode}">
-                    <div class="p-img-box"><img src="${product.img}" class="p-img"></div>
-                    <div class="p-badge">${product.cat}</div>
-                    <div class="p-details">
-                        <h3 style="color:white; margin-bottom:10px;">${product.name}</h3>
-                        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:15px;">${product.desc}</p>
-                        <button onclick="window.location.href='product-details.html?id=${product.id}'" class="p-btn">التفاصيل</button>
-                    </div>
-                </div>`;
+            productGrid.innerHTML += createProductCard(product);
         });
-
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => b.classList.remove('active'));
@@ -108,16 +145,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 const filter = btn.getAttribute('data-filter');
                 document.querySelectorAll('.product-card').forEach(card => {
                     if(filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.classList.remove('hide'); card.classList.add('show');
+                        card.style.display = 'flex'; card.classList.add('show');
                     } else {
-                        card.classList.remove('show'); card.classList.add('hide');
+                        card.style.display = 'none'; card.classList.remove('show');
                     }
                 });
             });
         });
     }
 
-    // 3. Product Details Logic
+    // Details Logic
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
     if (document.getElementById('p-name') && productId) {
@@ -137,3 +174,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+function createProductCard(product) {
+    return `
+    <div class="product-card" data-category="${product.catCode}">
+        <div class="p-img-box"><img src="${product.img}" class="p-img"></div>
+        <div class="p-badge">${product.cat}</div>
+        <div class="p-details">
+            <h3 style="color:white; margin-bottom:10px;">${product.name}</h3>
+            <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:15px;">${product.desc.substring(0, 50)}...</p>
+            <button onclick="window.location.href='product-details.html?id=${product.id}'" class="p-btn">التفاصيل</button>
+        </div>
+    </div>`;
+}
