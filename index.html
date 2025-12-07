@@ -11,7 +11,22 @@
 </head>
 <body>
     <canvas id="canvas-bg"></canvas>
-    <div class="preloader"><div class="spinner"></div></div>
+    <div class="preloader"><div class="loader-logo"><i class="fas fa-leaf"></i> نماء</div><div class="spinner"></div></div>
+
+    <a href="https://wa.me/201000000000" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i><span class="tooltip">تحدث معنا</span></a>
+
+    <nav class="navbar desktop-only">
+        <div class="nav-content">
+            <a href="index.html" class="logo"><i class="fas fa-leaf"></i> نماء</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="#features">التكنولوجيا</a></li>
+                <li><a href="products.html">المتجر</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+            <a href="products.html" class="btn-glow">تصفح المنتجات</a>
+        </div>
+    </nav>
 
     <header class="hero">
         <div class="container">
@@ -32,12 +47,14 @@
 
     <section id="features" class="section">
         <div class="container">
-            <h2 class="section-title">لماذا <span>نماء</span>؟</h2>
+            <h2 class="section-title">تقنيات <span>المستقبل</span></h2>
             <div class="bento-grid">
                 <div class="bento-card span-2 bg-gradient" data-aos="fade-up"><i class="fas fa-atom"></i><h3>نانو تكنولوجي</h3><p>امتصاص 100%.</p></div>
                 <div class="bento-card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-shield-alt"></i><h3>حماية</h3><p>ضد الآفات.</p></div>
                 <div class="bento-card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-chart-line"></i><h3>أرباح</h3><p>زيادة الإنتاج.</p></div>
-                <div class="bento-card span-2" style="background:url('https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=600') center/cover;" data-aos="fade-up" data-aos-delay="300"><h3 style="color:white; position:relative; z-index:2;">نتائج حقيقية</h3></div>
+                <div class="bento-card span-2" style="background:url('https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=600') center/cover;" data-aos="fade-up" data-aos-delay="300">
+                    <div style="position:relative; z-index:2; padding-top:50px;"><h3 style="color:white;">نتائج مثبتة</h3></div>
+                </div>
             </div>
         </div>
     </section>
@@ -52,13 +69,46 @@
         </div>
     </section>
 
+    <footer class="main-footer">
+        <div class="footer-line"></div>
+        <div class="container">
+            <div class="footer-cta-section">
+                <div class="cta-content"><h2>جاهز لزيادة إنتاجك؟</h2><p>انضم لآلاف المزارعين.</p></div>
+                <a href="contact.html" class="btn-glow-white">تواصل مع خبير</a>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <a href="#" class="footer-logo"><i class="fas fa-leaf"></i> نماء</a>
+                    <p class="brand-text">حلول زراعية ذكية لمستقبل مستدام.</p>
+                    <div class="social-row"><a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a></div>
+                </div>
+                <div class="footer-col">
+                    <h3 class="col-title">روابط</h3>
+                    <ul class="footer-links"><li><a href="index.html">الرئيسية</a></li><li><a href="products.html">المتجر</a></li><li><a href="contact.html">تواصل</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="col-title">اتصل</h3>
+                    <ul class="contact-list"><li><i class="fas fa-phone-alt"></i> 01000000000</li></ul>
+                </div>
+                <div class="footer-col newsletter-col">
+                    <h3 class="col-title">النشرة</h3>
+                    <form class="footer-form"><input type="email" placeholder="البريد"><button type="submit"><i class="fas fa-paper-plane"></i></button></form>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>© 2025 نماء.</p></div>
+        </div>
+    </footer>
+
+    <div class="mobile-nav">
+        <a href="index.html" class="m-item active"><i class="fas fa-home"></i></a>
+        <a href="#features" class="m-item"><i class="fas fa-atom"></i></a>
+        <div class="m-center"><a href="tel:01000000000" style="color:black;"><i class="fas fa-phone"></i></a></div>
+        <a href="products.html" class="m-item"><i class="fas fa-box"></i></a>
+        <a href="contact.html" class="m-item"><i class="fas fa-envelope"></i></a>
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
-    <a href="https://wa.me/201000000000?text=مرحباً، أريد استفساراً بخصوص منتجات نماء" class="whatsapp-btn" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-    <span class="tooltip">تحدث معنا</span>
-</a>
 </body>
 </html>
-
