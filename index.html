@@ -3,21 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نماء | تكنولوجيا الزراعة</title>
+    <meta name="description" content="نماء - تكنولوجيا زراعية متقدمة بالنانو تكنولوجي، أسمدة ذكية تزيد الإنتاجية وتحمي المحصول بأقل تكلفة.">
+    <meta name="theme-color" content="#0f9d58">
+    <title>نماء | تكنولوجيا الزراعة الذكية</title>
+    
+    <!-- Google Fonts - Cairo (مناسبة للعربية وجميلة) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <!-- Preload important resources -->
+    <link rel="preload" href="https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c18?w=1200&auto=format&fit=crop" as="image">
 </head>
 <body>
+    <!-- Animated Background Canvas -->
     <canvas id="canvas-bg"></canvas>
-    <div class="preloader"><div class="loader-logo"><i class="fas fa-leaf"></i> نماء</div><div class="spinner"></div></div>
 
-    <a href="https://wa.me/201000000000" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i><span class="tooltip">تحدث معنا</span></a>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader-logo">
+            <i class="fas fa-leaf"></i> نماء
+        </div>
+        <div class="spinner"></div>
+    </div>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/201000000000?text=مرحبًا%20نماء،%20أريد%20معرفة%20المزيد%20عن%20منتجاتكم" 
+       class="whatsapp-btn" target="_blank" aria-label="تواصل عبر واتساب">
+        <i class="fab fa-whatsapp"></i>
+        <span class="tooltip">تواصل معنا الآن</span>
+    </a>
+
+    <!-- Desktop Navigation -->
     <nav class="navbar desktop-only">
-        <div class="nav-content">
-            <a href="index.html" class="logo"><i class="fas fa-leaf"></i> نماء</a>
+        <div class="nav-content container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i> نماء
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">الرئيسية</a></li>
                 <li><a href="#features">التكنولوجيا</a></li>
@@ -28,87 +56,155 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero">
         <div class="container">
             <div class="hero-grid">
-                <div class="hero-text" data-aos="fade-left">
-                    <div style="color:var(--primary); font-weight:bold; margin-bottom:10px;">• تكنولوجيا زراعية متقدمة</div>
-                    <h1>استثمر في مستقبل <br><span>أرضك ومحصولك</span></h1>
-                    <p>الجيل الجديد من الأسمدة الذكية. تضمن لك أقصى إنتاجية بأقل تكلفة.</p>
-                    <div style="display: flex; gap: 20px;">
+                <div class="hero-text" data-aos="fade-left" data-aos-duration="1000">
+                    <span class="tagline">• تكنولوجيا زراعية متقدمة</span>
+                    <h1>استثمر في مستقبل <br><span class="highlight">أرضك ومحصولك</span></h1>
+                    <p>الجيل الجديد من الأسمدة الذكية بتقنية النانو – امتصاص 100%، حماية فائقة، وإنتاجية تصل إلى 40% أعلى.</p>
+                    <div class="hero-buttons">
                         <a href="products.html" class="btn-glow">ابدأ الآن <i class="fas fa-arrow-left"></i></a>
-                        <a href="#features" class="btn-outline">اكتشف المزيد</a>
+                        <a href="#features" class="btn-outline">اكتشف التكنولوجيا</a>
                     </div>
                 </div>
-                <div class="hero-img-box" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c18?w=800" class="hero-main-img"></div>
+                <div class="hero-img-box" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c18?w=1200&auto=format&fit=crop&q=80" 
+                         alt="زراعة حديثة بتقنية نماء" class="hero-main-img" loading="lazy">
+                </div>
             </div>
         </div>
     </header>
 
+    <!-- Features Section -->
     <section id="features" class="section">
         <div class="container">
-            <h2 class="section-title">تقنيات <span>المستقبل</span></h2>
+            <h2 class="section-title">تقنيات <span>المستقبل</span> في متناول يديك</h2>
             <div class="bento-grid">
-                <div class="bento-card span-2 bg-gradient" data-aos="fade-up"><i class="fas fa-atom"></i><h3>نانو تكنولوجي</h3><p>امتصاص 100%.</p></div>
-                <div class="bento-card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-shield-alt"></i><h3>حماية</h3><p>ضد الآفات.</p></div>
-                <div class="bento-card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-chart-line"></i><h3>أرباح</h3><p>زيادة الإنتاج.</p></div>
-                <div class="bento-card span-2" style="background:url('https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=600') center/cover;" data-aos="fade-up" data-aos-delay="300">
-                    <div style="position:relative; z-index:2; padding-top:50px;"><h3 style="color:white;">نتائج مثبتة</h3></div>
+                <div class="bento-card span-2 bg-gradient" data-aos="fade-up">
+                    <i class="fas fa-atom"></i>
+                    <h3>تقنية النانو المتطورة</h3>
+                    <p>جزيئات بحجم نانومتر تُمتص بالكامل خلال ساعات</p>
+                </div>
+                <div class="bento-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>حماية شاملة</h3>
+                    <p>مقاومة الآفات والأمراض بدون مبيدات كيميائية ضارة</p>
+                </div>
+                <div class="bento-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>زيادة مضمونة في الأرباح</h3>
+                    <p>ارتفاع الإنتاجية من 25% إلى 45% حسب نوع المحصول</p>
+                </div>
+                <div class="bento-card span-2 background-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="overlay-content">
+                        <h3>نتائج مثبتة علميًا</h3>
+                        <p>تم تجريب منتجاتنا على أكثر من ٥٠٠٠ فدان في مصر</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
+    <!-- Latest Products Swiper -->
+    <section class="section products-section">
         <div class="container">
             <h2 class="section-title">أحدث <span>المنتجات</span></h2>
             <div class="swiper mySwiper">
-                <div class="swiper-wrapper"></div>
+                <div class="swiper-wrapper">
+                    <!-- سيتم ملؤها ديناميكيًا عبر script.js أو يمكنك إضافة كروت يدويًا -->
+                </div>
                 <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-line"></div>
         <div class="container">
             <div class="footer-cta-section">
-                <div class="cta-content"><h2>جاهز لزيادة إنتاجك؟</h2><p>انضم لآلاف المزارعين.</p></div>
-                <a href="contact.html" class="btn-glow-white">تواصل مع خبير</a>
+                <div class="cta-content">
+                    <h2>هل أنت جاهز لزيادة إنتاجك الزراعي؟</h2>
+                    <p>انضم إلى آلاف المزارعين الذين يثقون بنا يوميًا</p>
+                </div>
+                <a href="contact.html" class="btn-glow-white">تواصل مع خبير زراعي الآن</a>
             </div>
+
             <div class="footer-grid">
                 <div class="footer-col brand-col">
                     <a href="#" class="footer-logo"><i class="fas fa-leaf"></i> نماء</a>
-                    <p class="brand-text">حلول زراعية ذكية لمستقبل مستدام.</p>
-                    <div class="social-row"><a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a></div>
+                    <p class="brand-text">حلول زراعية ذكية بتقنية النانو لمستقبل أخضر ومربح.</p>
+                    <div class="social-row">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/201000000000" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="footer-col">
-                    <h3 class="col-title">روابط</h3>
-                    <ul class="footer-links"><li><a href="index.html">الرئيسية</a></li><li><a href="products.html">المتجر</a></li><li><a href="contact.html">تواصل</a></li></ul>
+                    <h3 class="col-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="products.html">المتجر</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                        <li><a href="#features">التكنولوجيا</a></li>
+                    </ul>
                 </div>
                 <div class="footer-col">
-                    <h3 class="col-title">اتصل</h3>
-                    <ul class="contact-list"><li><i class="fas fa-phone-alt"></i> 01000000000</li></ul>
+                    <h3 class="col-title">تواصَل معنا</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-phone-alt"></i> 01000 000 000</li>
+                        <li><i class="fas fa-envelope"></i> info@namaa.ag</li>
+                        <li><i class="fas fa-map-marker-alt"></i> القاهرة - مصر</li>
+                    </ul>
                 </div>
                 <div class="footer-col newsletter-col">
-                    <h3 class="col-title">النشرة</h3>
-                    <form class="footer-form"><input type="email" placeholder="البريد"><button type="submit"><i class="fas fa-paper-plane"></i></button></form>
+                    <h3 class="col-title">اشترك في النشرة</h3>
+                    <form class="footer-form" onsubmit="event.preventDefault(); alert('تم الاشتراك بنجاح!');">
+                        <input type="email" placeholder="بريدك الإلكتروني" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
-            <div class="footer-bottom"><p>© 2025 نماء.</p></div>
+            <div class="footer-bottom">
+                <p>© 2025 نماء - جميع الحقوق محفوظة | تمتص 100% من الحب للزراعة 🌱</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Mobile Bottom Navigation -->
     <div class="mobile-nav">
-        <a href="index.html" class="m-item active"><i class="fas fa-home"></i></a>
-        <a href="#features" class="m-item"><i class="fas fa-atom"></i></a>
-        <div class="m-center"><a href="tel:01000000000" style="color:black;"><i class="fas fa-phone"></i></a></div>
-        <a href="products.html" class="m-item"><i class="fas fa-box"></i></a>
-        <a href="contact.html" class="m-item"><i class="fas fa-envelope"></i></a>
+        <a href="index.html" class="m-item active"><i class="fas fa-home"></i><span>الرئيسية</span></a>
+        <a href="#features" class="m-item"><i class="fas fa-atom"></i><span>التكنولوجيا</span></a>
+        <div class="m-center">
+            <a href="tel:01000000000"><i class="fas fa-phone"></i></a>
+        </div>
+        <a href="products.html" class="m-item"><i class="fas fa-store"></i><span>المتجر</span></a>
+        <a href="contact.html" class="m-item"><i class="fas fa-envelope"></i><span>تواصل</span></a>
     </div>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // AOS Init
+        AOS.init({
+            once: true,
+            duration: 800,
+            easing: 'ease-out-cubic'
+        });
+
+        // Preloader
+        window.addEventListener('load', () => {
+            document.querySelector('.preloader').style.opacity = '0';
+            setTimeout(() => {
+                document.querySelector('.preloader').style.display = 'none';
+            }, 600);
+        });
+    </script>
 </body>
 </html>
